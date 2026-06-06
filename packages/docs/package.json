@@ -30,6 +30,7 @@
     "@vitejs/plugin-react": "^6.0.1",
     "@vitest/browser-playwright": "^4.1.8",
     "@vitest/coverage-v8": "^4.1.8",
+    "chromatic": "^16.10.0",
     "eslint": "^10.3.0",
     "eslint-config-prettier": "^9.1.2",
     "eslint-plugin-react-hooks": "^7.1.1",
