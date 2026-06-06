@@ -14,12 +14,25 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - run: yarn
-        #👇 Adds Chromatic as a step in the workflow
-      - uses: chromaui/action@latest
-        # Options required for Chromatic's GitHub Action
+
+      # 1. Configura o Node.js corretamente
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          #👇 Chromatic projectToken, see https://storybook.js.org/tutorials/intro-to-storybook/react/en/deploy/ to obtain it
+          node-version: 20 # Ou a versão que você utiliza no projeto
+
+      # 2. Ativa o Corepack para usar a versão exata do NPM (11.12.0) definida no package.json
+      - name: Enable Corepack
+        run: corepack enable
+
+      # 3. Instala as dependências de todo o Monorepo usando NPM na raiz
+      - name: Install Dependencies
+        run: npm install
+
+      # 4. Executa o Chromatic apontando para a pasta correta
+      - uses: chromaui/action@latest
+        with:
           workingDir: ./packages/docs
+          # 👇 Força a action do Chromatic a usar o npm para rodar internamente
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
