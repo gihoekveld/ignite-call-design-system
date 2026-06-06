@@ -1,38 +1,43 @@
-# Workflow name
-name: "Chromatic Deployment"
-
-# Event for the workflow
-on: push
-
-# List of jobs
+name: Build and Publish Storybook to GitHub Pages
+on:
+  push:
+    branches:
+      - "main" # Use specific branch name
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 jobs:
-  chromatic:
-    name: "Run Chromatic"
+  deploy:
     runs-on: ubuntu-latest
-    # Job steps
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
-
-      # 1. Configura o Node.js corretamente
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v6
         with:
-          node-version: 20 # Ou a versão que você utiliza no projeto
-
-      # 2. Ativa o Corepack para usar a versão exata do NPM (11.12.0) definida no package.json
-      - name: Enable Corepack
-        run: corepack enable
-
-      # 3. Instala as dependências de todo o Monorepo usando NPM na raiz
-      - name: Install Dependencies
-        run: npm install
-
-      # 4. Executa o Chromatic apontando para a pasta correta
-      - uses: chromaui/action@latest
+          node-version: "24"
+          cache: "npm" # Adjust caching strategy and configuration if using other package managers
+      - name: Install dependencies
+        run: npm ci # Replace with appropriate command if using other package managers
+      - name: Build Storybook
+        run: npm run build-storybook
+      # Upload pages artifact
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          workingDir: ./packages/docs
-          # 👇 Força a action do Chromatic a usar o npm para rodar internamente
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          path: "storybook-static"
+      # Deploy to Github Pages
+      - id: deploy
+        name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        with:
+          token: ${{ github.token }}
