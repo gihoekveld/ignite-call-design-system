@@ -32,7 +32,6 @@ jobs:
         run: npm ci # Replace with appropriate command if using other package managers
 
       - name: Build
-        working-directory: ./packages/docs
         run: npm run build
 
       - name: Deploy storybook to GitHub Pages
