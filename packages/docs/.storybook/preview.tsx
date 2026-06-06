@@ -4,7 +4,7 @@ import { themes } from 'storybook/theming'
 const preview: Preview = {
   parameters: {
     backgrounds: {
-      default: 'light',
+      default: 'dark',
       values: [
         { name: 'light', value: '#ffffff' },
         { name: 'dark', value: '#333333' },
@@ -30,6 +30,6 @@ const preview: Preview = {
       theme: themes.dark
     },
   },
-};
+}
 
-export default preview;
+export default preview
