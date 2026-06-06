@@ -31,7 +31,7 @@ export const Button = styled('button', {
   variants: {
     variant: {
       primary: {
-        color: '$white',
+        color: '$black',
         background: '$ignite500',
 
         '&:not(:disabled):hover': {
