@@ -1,0 +1,21 @@
+{
+  "name": "@hoekveld-ui/tokens",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "dev": "tsup src/index.ts --format esm,cjs --dts --watch",
+    "lint": "eslint src/**/*.ts* --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@hoekveld-ui/eslint-config": "*",
+    "@hoekveld-ui/ts-config": "*",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3"
+  }
+}
