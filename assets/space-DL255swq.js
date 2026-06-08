@@ -1,0 +1,4 @@
+import{i as e}from"./preload-helper-Ru7R3Y4F.js";import{a as t,o as n,v as r}from"./blocks-BsjkbKa4.js";import{t as i}from"./jsx-runtime-BCm3eTdV.js";import{t as a}from"./mdx-react-shim-B6XSkd88.js";import{a as o,c as s}from"./dist-DXBVls1u.js";import{n as c,t as l}from"./TokensGrid-DSUKCfty.js";function u(e){let n={h1:`h1`,p:`p`,...r(),...e.components};return(0,f.jsxs)(f.Fragment,{children:[(0,f.jsx)(t,{title:`Tokens/Spaces`}),`
+`,(0,f.jsx)(n.h1,{id:`spaces`,children:`Spaces`}),`
+`,(0,f.jsx)(n.p,{children:`Esses são os espaços utilizadas no Sample UI.`}),`
+`,(0,f.jsx)(l,{tokens:s,hasRamValue:!0})]})}function d(e={}){let{wrapper:t}={...r(),...e.components};return t?(0,f.jsx)(t,{...e,children:(0,f.jsx)(u,{...e})}):u(e)}var f;e((()=>{f=i(),a(),n(),c(),o()}))();export{d as default};

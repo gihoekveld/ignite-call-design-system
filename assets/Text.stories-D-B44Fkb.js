@@ -1,0 +1,6 @@
+import{i as e}from"./preload-helper-Ru7R3Y4F.js";import{s as t,u as n}from"./dist-PAqxjlz8.js";var r,i,a,o;e((()=>{n(),r={title:`Typography/Text`,component:t,tags:[`autodocs`],args:{children:`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro reprehenderit est veniam? Rem recusandae sint perspiciatis debitis corrupti. Deserunt neque exercitationem illo voluptatum laudantium culpa suscipit accusantium blanditiis voluptas numquam.`,size:`md`},argTypes:{size:{options:[`xxs`,`xs`,`sm`,`md`,`lg`,`xl`,`2xl`,`4xl`,`5xl`,`6xl`,`7xl`,`8xl`,`9xl`],control:{type:`inline-radio`}}}},i={},a={args:{children:`Strong text`,as:`strong`}},i.parameters={...i.parameters,docs:{...i.parameters?.docs,source:{originalSource:`{}`,...i.parameters?.docs?.source}}},a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:`{
+  args: {
+    children: 'Strong text',
+    as: 'strong'
+  }
+}`,...a.parameters?.docs?.source}}},o=[`Primary`,`CustomTag`]}))();export{a as CustomTag,i as Primary,o as __namedExportsOrder,r as default};

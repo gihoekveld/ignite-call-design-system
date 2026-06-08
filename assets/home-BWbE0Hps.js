@@ -1,0 +1,3 @@
+import{i as e}from"./preload-helper-Ru7R3Y4F.js";import{a as t,o as n,v as r}from"./blocks-BsjkbKa4.js";import{t as i}from"./jsx-runtime-BCm3eTdV.js";import{t as a}from"./mdx-react-shim-B6XSkd88.js";function o(e){let n={h1:`h1`,p:`p`,...r(),...e.components};return(0,c.jsxs)(c.Fragment,{children:[(0,c.jsx)(t,{title:`Home`}),`
+`,(0,c.jsx)(n.h1,{id:`sample-ui`,children:`Sample UI`}),`
+`,(0,c.jsx)(n.p,{children:`Design System de Web 3.`})]})}function s(e={}){let{wrapper:t}={...r(),...e.components};return t?(0,c.jsx)(t,{...e,children:(0,c.jsx)(o,{...e})}):o(e)}var c;e((()=>{c=i(),a(),n()}))();export{s as default};
